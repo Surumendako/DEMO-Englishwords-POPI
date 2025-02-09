@@ -321,3 +321,42 @@ input[type="text"]:focus {
       gap: 15px;
   }
 }
+@media (max-width: 1024px) and (orientation: landscape) {
+  body {
+    overflow: hidden; /* 余分なスクロールを防ぐ */
+  }
+
+  .keyboard {
+    grid-template-columns: repeat(10, 60px); /* キーボードのサイズ調整 */
+    grid-gap: 5px;
+  }
+
+  .key {
+    padding: 5px;
+  }
+
+  .key img {
+    width: 40px;
+    height: 40px;
+  }
+
+  input[type="text"] {
+    width: 60%; /* 入力欄の幅を調整 */
+    font-size: 28px;
+  }
+
+  #questionText {
+    font-size: 36px; /* 問題の文字サイズ調整 */
+  }
+
+  .status {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  #keyboardToggleButton {
+    width: 140px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
