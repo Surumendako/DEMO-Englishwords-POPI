@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="レベル.css"> <!-- 外部CSSファイルを適用 -->
 </head>
 <body>
-
+<script src="レベル.js"></script>
 <div class="stars">
     <div class="star" style="top: 10%; left: 10%; width: 4px; height: 4px;"></div>
     <div class="star" style="top: 20%; left: 30%; width: 2px; height: 2px;"></div>
@@ -63,57 +63,6 @@
         </div>
     </div>
 </div>
-
-<script>
-const beginnerBtn = document.getElementById('beginnerBtn');
-const intermediateBtn = document.getElementById('intermediateBtn');
-const advancedBtn = document.getElementById('advancedBtn');
-const mixedBtn = document.getElementById('mixedBtn');
-const startBtn = document.getElementById('startBtn');
-
-beginnerBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('overlay').style.display = 'flex';
-    document.body.classList.add('overlay-active');
-    startBtn.href = "初級.html";
-});
-
-intermediateBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('overlay').style.display = 'flex';
-    document.body.classList.add('overlay-active');
-    startBtn.href = "中級.html";
-});
-
-advancedBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('overlay').style.display = 'flex';
-    document.body.classList.add('overlay-active');
-    startBtn.href = "上級.html";
-});
-
-mixedBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('overlay').style.display = 'flex';
-    document.body.classList.add('overlay-active');
-    startBtn.href = "ミックス.html";
-});
-
-// オーバーレイを閉じる
-document.getElementById('closeOverlay').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('overlay').style.display = 'none';
-    document.body.classList.remove('overlay-active');
-});
-
-// オーバーレイ外クリックで閉じる
-document.getElementById('overlay').addEventListener('click', function(event) {
-    if (event.target === this) {
-        this.style.display = 'none';
-        document.body.classList.remove('overlay-active');
-    }
-});
-</script>
 
 </body>
 </html>
