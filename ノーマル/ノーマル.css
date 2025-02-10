@@ -256,20 +256,21 @@ input[type="text"]:focus {
 @media (max-width: 768px) {
     .keyboard {
         display: grid;
-        grid-template-columns: repeat(5, minmax(40px, 1fr)); /* 一列5個で並べる */
-        gap: 5px; /* キー同士の間隔を確保 */
+        grid-template-columns: repeat(4, 1fr); /* 一列4個の固定配置 */
+        gap: 4px; /* 隙間を狭める */
         justify-content: center;
         align-items: center;
-        width: 90%; /* 画面幅を超えないよう調整 */
-        max-width: 500px; /* ある程度の最大幅を設定 */
+        width: 90%;
+        max-width: 350px; /* 最大幅を設定 */
         margin: auto;
+        max-height: 70vh; /* 画面の70%以内に収める */
         padding: 10px;
     }
 
     .key {
-        width: 100%; /* グリッドの幅に応じて自動調整 */
-        aspect-ratio: 1 / 1; /* 正方形を維持 */
-        font-size: 18px; /* 文字サイズ調整 */
+        width: min(22vw, 60px); /* 画面幅に応じて調整、最大60px */
+        height: min(22vw, 60px); /* 高さも同じ比率で調整 */
+        font-size: 16px; /* 文字サイズを少し小さめに */
         text-align: center;
         display: flex;
         align-items: center;
@@ -281,7 +282,7 @@ input[type="text"]:focus {
     }
 
     .key img {
-        width: 60%; /* アイコンをキーのサイズに応じて調整 */
+        width: 50%; /* アイコンのサイズをキーに合わせて調整 */
         height: auto;
     }
 }
