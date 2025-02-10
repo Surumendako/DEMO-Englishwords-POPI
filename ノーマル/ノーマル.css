@@ -288,11 +288,10 @@ input[type="text"]:focus {
 
     /* 画像サイズを縮小 */
     .key img {
-        width: 40%; /* 画像をキーの40%に */
+        width: 80%; /* 画像をキーの40%に */
         height: auto;
     }
-
-    /* 特殊キーのサイズ調整 */
+    
     .key.delete, .key.answer {
         grid-column: span 3;
         height: 45px;
