@@ -253,46 +253,33 @@ input[type="text"]:focus {
   height: 100%;
 }
 
-@media (max-width: 480px) {
-    body {
-        font-size: 16px;
-    }
-
+@media (max-width: 768px) {
     .keyboard {
         display: grid;
-        grid-template-columns: repeat(5, minmax(40px, 1fr)); /* 5列にする */
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); /* できるだけ横に並べる */
         gap: 5px;
         justify-content: center;
-        margin-top: 20px;
+        align-items: center;
+        width: 90%;
+        margin: auto;
     }
 
     .key {
         width: 50px;
         height: 50px;
-        font-size: 18px;
-        padding: 5px;
+        font-size: 20px;
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: #043140a6;
+        color: white;
+        border-radius: 8px;
+        border: 2px solid white;
     }
 
     .key img {
         width: 40px;
         height: 40px;
-    }
-
-    input[type="text"] {
-        width: 100%;
-        max-width: 320px;
-        font-size: 24px;
-        height: 45px;
-    }
-
-    #keyboardToggleButton, #retryButton, #backButton {
-        width: 100%;
-        max-width: 280px;
-        font-size: 16px;
-        padding: 10px;
     }
 }
