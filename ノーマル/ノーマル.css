@@ -267,7 +267,7 @@ input[type="text"]:focus {
     }
 
     .key {
-        width: 100%; /* グリッドの幅に応じて自動調整 */
+        width: 80%; /* キーの幅を調整して枠を小さく */
         aspect-ratio: 1 / 1; /* 正方形を維持 */
         font-size: 16px; /* 文字が大きすぎないように調整 */
         text-align: center;
@@ -281,7 +281,7 @@ input[type="text"]:focus {
     }
 
     .key img {
-        width: 60%; /* アイコンをキーのサイズに応じて調整 */
+        width: 50%; /* アイコンをさらに小さくする */
         height: auto;
     }
-} 
+}
