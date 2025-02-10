@@ -256,10 +256,10 @@ input[type="text"]:focus {
 @media (max-width: 768px) {
     .keyboard {
         display: grid;
-        grid-template-columns: repeat(9, minmax(32px, 1fr)); /* 1行9キーでバランス調整 */
-        gap: 5px; /* 余白を少し増やす */
+        grid-template-columns: repeat(9, minmax(30px, 1fr)); /* 1行9キーで調整 */
+        gap: 4px; /* 余白を微調整 */
         width: 100%;
-        max-width: 500px;
+        max-width: 480px;
         padding: 10px;
         background-color: #f9e5b9;
         border-radius: 15px;
@@ -267,8 +267,8 @@ input[type="text"]:focus {
 
     .key {
         width: 100%;
-        aspect-ratio: 1 / 1.2; /* 正方形より少し縦長にする */
-        font-size: 14px; /* 文字サイズを調整 */
+        aspect-ratio: 1 / 1.1; /* 縦長になりすぎないよう調整 */
+        font-size: 14px; /* 文字サイズを適切に */
         font-weight: bold;
         color: #a33c2a;
         background-color: #fff8dc;
@@ -279,17 +279,24 @@ input[type="text"]:focus {
         border: 2px solid #d4a373;
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         cursor: pointer;
+        padding: 5px;
     }
 
     .key:active {
         background-color: #f3d9a8;
     }
 
+    /* 画像サイズを縮小 */
+    .key img {
+        width: 40%; /* 画像をキーの40%に */
+        height: auto;
+    }
+
     /* 特殊キーのサイズ調整 */
     .key.delete, .key.answer {
-        grid-column: span 3; /* 横幅を3キー分に */
-        height: 50px; /* 高さを統一 */
-        font-size: 16px;
+        grid-column: span 3;
+        height: 45px;
+        font-size: 15px;
     }
 
     .key.delete {
