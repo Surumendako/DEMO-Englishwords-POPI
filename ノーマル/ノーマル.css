@@ -256,22 +256,45 @@ input[type="text"]:focus {
 @media (max-width: 768px) {
     .keyboard {
         display: grid;
-        grid-template-columns: repeat(10, 1fr); /* 1行に10個配置 */
-        gap: 5px; /* キー間の隙間 */
+        grid-template-columns: repeat(9, 1fr); /* 1行に9キー */
+        gap: 6px; /* キー間の隙間 */
         justify-content: center;
         align-items: center;
         width: 100%;
-        max-width: 700px; /* キーボードの最大幅 */
+        max-width: 600px; /* キーボードの最大幅 */
         margin: auto;
         padding: 10px;
-        background-color: #f9e5b9; /* 背景色 */
-        border-radius: 15px; /* 角丸 */
+        background-color: #f9e5b9; /* キーボード背景色 */
+        border-radius: 15px; /* キーボード全体の角を丸く */
     }
 
     .key {
         width: 100%;
-        height: 55px; /* キーの高さ */
-        font-size: 24px;
+        height: 50px; /* キーの高さ */
+        font-size: 22px;
         font-weight: bold;
         color: #a33c2a; /* 赤いフォント */
-        background-color: #fff8dc; /*
+        background-color: #fff8dc; /* キーの背景色 */
+        border-radius: 12px; /* キーの角を丸く */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #d4a373; /* 枠線の色 */
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); /* 影をつけて立体感 */
+    }
+
+    .key:active {
+        background-color: #f3d9a8; /* 押したときに色を少し暗く */
+    }
+
+    .keyboard-row {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr); /* 1行に9キー */
+        gap: 6px;
+    }
+
+    .key img {
+        width: 60%;
+        height: auto;
+    }
+}
