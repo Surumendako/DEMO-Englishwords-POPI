@@ -256,54 +256,22 @@ input[type="text"]:focus {
 @media (max-width: 768px) {
     .keyboard {
         display: grid;
-        grid-template-columns: repeat(10, 1fr); /* アルファベットの列数（例: AからJ） */
-        gap: 8px; /* キー間の余白 */
+        grid-template-columns: repeat(10, 1fr); /* 1行に10個配置 */
+        gap: 5px; /* キー間の隙間 */
         justify-content: center;
         align-items: center;
-        width: 100%; /* コンテナ幅いっぱい */
+        width: 100%;
+        max-width: 700px; /* キーボードの最大幅 */
         margin: auto;
-        padding: 15px;
-        max-width: 800px; /* 最大幅を設定 */
+        padding: 10px;
+        background-color: #f9e5b9; /* 背景色 */
+        border-radius: 15px; /* 角丸 */
     }
 
     .key {
         width: 100%;
-        height: 80px; /* 高さを大きめに設定 */
-        font-size: 22px; /* フォントサイズを大きく */
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #4a90e2; /* 青色の背景 */
-        color: white;
-        border-radius: 10px; /* 丸みを強調 */
-        border: 2px solid #297ab8;
-        transition: background-color 0.3s ease; /* ホバー時の色変更 */
-        cursor: pointer; /* ポインターを手のひらに */
-    }
-
-    .key:hover {
-        background-color: #3c7ea5; /* ホバー時に色を変える */
-    }
-
-    .key img {
-        width: 60%; /* アイコンをキーのサイズに合わせて調整（画像を大きく） */
-        height: auto;
-    }
-
-    .keyboard-row {
-        display: grid;
-        grid-template-columns: repeat(10, 1fr); /* 1行10個のキー */
-        gap: 8px; /* キー間の余白 */
-        margin-bottom: 12px; /* 行間に余白を追加 */
-    }
-
-    .keyboard-row:last-child {
-        margin-bottom: 0; /* 最終行の余白をなくす */
-    }
-
-    /* Shift、Spaceなどの特殊キー */
-    .key.special {
-        grid-column: span 2; /* 横に広げてスペースキーなどにする */
-    }
-}
+        height: 55px; /* キーの高さ */
+        font-size: 24px;
+        font-weight: bold;
+        color: #a33c2a; /* 赤いフォント */
+        background-color: #fff8dc; /*
