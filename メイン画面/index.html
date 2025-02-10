@@ -1,1 +1,280 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>英単語 POPI</title><link rel="stylesheet" href="メイン画面.css"></head><body><div class="modal" id="modal"><div class="modal-content"><h2>禁止事項</h2><p>【1. コードの無断改変・再配布】<br>本プロジェクトに含まれるコードやリソースを、事前の許可なく改変、再配布することを禁止します。<br>ソースコードを商業目的で利用することや、商用プロダクトに統合することは禁止です。</p><p>【2. 無断転載・商業利用】<br>本サイトのコンテンツ（HTML、CSS、JavaScript、データなど）を、当サイトの許可なく無断で転載・再利用することは禁じられています。<br>本サイトのコンテンツを、広告・宣伝など商業目的で利用することは禁止されています。</p><p>【3. 不正アクセス・サーバーへの攻撃】<br>本サイトや関連サーバーに対して、脆弱性を利用して不正アクセスを試みたり、サーバーへの過剰な負荷をかける行為は禁止です。</p><p>【4. 悪意のあるコードの実行】<br>本サイトやGitHubリポジトリにアップロードされたファイルに、悪意のあるコード（ウイルス、マルウェア、スクリプトなど）を仕込む行為は禁止です。</p><p>【5. 無断での改変・パッケージ化】<br>本サイトのオフラインバージョンを無断で他のパッケージとして配布することは禁止です。</p><p>【6. 利用規約の回避】<br>本サイトの利用規約を回避するために、不正な方法でAPIやリポジトリにアクセスすることを禁止します。</p><p>【7. 他者の権利の侵害】<br>サイトに投稿する内容や情報が、他者の知的財産権（著作権、商標権など）を侵害していないことを確認してください。</p><p>【8. 改変された内容の提供】<br>オフラインサイトの内容を改変した場合、その改変内容を再配布することは禁止です。</p><button onclick="closeModal()">OK</button></div></div><div class="stars"><div class="star" style="top: 10%; left: 10%; width: 4px; height: 4px;"></div><div class="star" style="top: 20%; left: 30%; width: 2px; height: 2px;"></div><div class="star" style="top: 5%; left: 50%; width: 3px; height: 3px;"></div><div class="star" style="top: 30%; left: 70%; width: 5px; height: 5px;"></div><div class="star" style="top: 50%; left: 90%; width: 6px; height: 6px;"></div><div class="star" style="top: 40%; left: 80%; width: 4px; height: 4px;"></div><div class="star" style="top: 60%; left: 20%; width: 3px; height: 3px;"></div><div class="star" style="top: 80%; left: 40%; width: 7px; height: 7px;"></div><div class="star" style="top: 70%; left: 60%; width: 5px; height: 5px;"></div><div class="star" style="top: 90%; left: 80%; width: 6px; height: 6px;"></div></div><div class="welcome">ようこそ </div><div class="center"><img src="スタート/POPI.jpg" width="730px" height="500px"></div><div class="center"><a href="問題選択.html" class="clickable"><img src="スタート/始める.jpg" width="700px" height="300px" alt="始める"></a></div><script>window.onload=function(){document.getElementById("modal").style.display="flex"};function closeModal(){document.getElementById("modal").style.display="none"}</script></body></html>
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>英単語 POPI</title></head><body><style>body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #a1c8f4;
+    position: relative;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: moveStars 10s linear infinite;
+}
+
+@keyframes moveStars {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-100vw) translateY(-100vh);
+    }
+}
+
+.star:nth-child(odd) {
+    width: 3px;
+    height: 3px;
+    top: 10%;
+    left: 10%;
+}
+
+.star:nth-child(2) {
+    width: 2px;
+    height: 2px;
+    top: 20%;
+    left: 30%;
+}
+
+.star:nth-child(3) {
+    width: 4px;
+    height: 4px;
+    top: 5%;
+    left: 50%;
+}
+
+.star:nth-child(4) {
+    width: 3px;
+    height: 3px;
+    top: 30%;
+    left: 70%;
+}
+
+.star:nth-child(5) {
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    left: 90%;
+}
+
+.star:nth-child(6) {
+    width: 4px;
+    height: 4px;
+    top: 40%;
+    left: 80%;
+}
+
+.star:nth-child(7) {
+    width: 3px;
+    height: 3px;
+    top: 60%;
+    left: 20%;
+}
+
+.star:nth-child(8) {
+    width: 7px;
+    height: 7px;
+    top: 80%;
+    left: 40%;
+}
+
+.star:nth-child(9) {
+    width: 5px;
+    height: 5px;
+    top: 70%;
+    left: 60%;
+}
+
+.star:nth-child(10) {
+    width: 6px;
+    height: 6px;
+    top: 90%;
+    left: 80%;
+}
+
+.center {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    margin-top: 20px;
+}
+
+.top-row, .bottom-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.center img {
+    width: 600px;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #fff0;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.center img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.back-button {
+    width: 250px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .center img {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .top-row, .bottom-row {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .back-button {
+        width: 200px;
+    }
+
+    .star {
+        width: 3px;
+        height: 3px;
+    }
+
+    .star:nth-child(odd) {
+        top: 8%;
+        left: 8%;
+    }
+
+    .star:nth-child(2) {
+        top: 18%;
+        left: 28%;
+    }
+
+    .star:nth-child(3) {
+        top: 3%;
+        left: 45%;
+    }
+
+    .star:nth-child(4) {
+        top: 28%;
+        left: 65%;
+    }
+
+    .star:nth-child(5) {
+        top: 48%;
+        left: 85%;
+    }
+
+    .star:nth-child(6) {
+        top: 38%;
+        left: 75%;
+    }
+
+    .star:nth-child(7) {
+        top: 58%;
+        left: 18%;
+    }
+
+    .star:nth-child(8) {
+        top: 78%;
+        left: 38%;
+    }
+
+    .star:nth-child(9) {
+        top: 68%;
+        left: 58%;
+    }
+
+    .star:nth-child(10) {
+        top: 88%;
+        left: 78%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .center img {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .top-row, .bottom-row {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .back-button {
+        width: 180px;
+    }
+
+    .star {
+        width: 2px;
+        height: 2px;
+    }
+
+    .star:nth-child(odd) {
+        top: 5%;
+        left: 5%;
+    }
+
+    .star:nth-child(2) {
+        top: 15%;
+        left: 25%;
+    }
+
+    .star:nth-child(3) {
+        top: 2%;
+        left: 44%;
+    }
+
+    .star:nth-child(4) {
+        top: 25%;
+        left: 64%;
+    }
+
+    .star:nth-child(5) {
+        top: 45%;
+        left: 84%;
+    }
+
+    .star:nth-child(6) {
+        top: 35%;
+        left: 74%;
+    }
+
+    .star:nth-child(7) {
+        top: 55%;
+        left: 17%;
+    }
+
+    .star:nth-child(8) {
+        top: 75%;
+        left: 37%;
+    }
+
+    .star:nth-child(9) {
+        top: 65%;
+        left: 57%;
+    }
+
+    .star:nth-child(10) {
+        top: 85%;
+        left: 77%;
+    }
+}</style><div class="modal" id="modal"><div class="modal-content"><h2>禁止事項</h2><p>【1. コードの無断改変・再配布】<br>本プロジェクトに含まれるコードやリソースを、事前の許可なく改変、再配布することを禁止します。<br>ソースコードを商業目的で利用することや、商用プロダクトに統合することは禁止です。</p><p>【2. 無断転載・商業利用】<br>本サイトのコンテンツ（HTML、CSS、JavaScript、データなど）を、当サイトの許可なく無断で転載・再利用することは禁じられています。<br>本サイトのコンテンツを、広告・宣伝など商業目的で利用することは禁止されています。</p><p>【3. 不正アクセス・サーバーへの攻撃】<br>本サイトや関連サーバーに対して、脆弱性を利用して不正アクセスを試みたり、サーバーへの過剰な負荷をかける行為は禁止です。</p><p>【4. 悪意のあるコードの実行】<br>本サイトやGitHubリポジトリにアップロードされたファイルに、悪意のあるコード（ウイルス、マルウェア、スクリプトなど）を仕込む行為は禁止です。</p><p>【5. 無断での改変・パッケージ化】<br>本サイトのオフラインバージョンを無断で他のパッケージとして配布することは禁止です。</p><p>【6. 利用規約の回避】<br>本サイトの利用規約を回避するために、不正な方法でAPIやリポジトリにアクセスすることを禁止します。</p><p>【7. 他者の権利の侵害】<br>サイトに投稿する内容や情報が、他者の知的財産権（著作権、商標権など）を侵害していないことを確認してください。</p><p>【8. 改変された内容の提供】<br>オフラインサイトの内容を改変した場合、その改変内容を再配布することは禁止です。</p><button onclick="closeModal()">OK</button></div></div><div class="stars"><div class="star" style="top: 10%; left: 10%; width: 4px; height: 4px;"></div><div class="star" style="top: 20%; left: 30%; width: 2px; height: 2px;"></div><div class="star" style="top: 5%; left: 50%; width: 3px; height: 3px;"></div><div class="star" style="top: 30%; left: 70%; width: 5px; height: 5px;"></div><div class="star" style="top: 50%; left: 90%; width: 6px; height: 6px;"></div><div class="star" style="top: 40%; left: 80%; width: 4px; height: 4px;"></div><div class="star" style="top: 60%; left: 20%; width: 3px; height: 3px;"></div><div class="star" style="top: 80%; left: 40%; width: 7px; height: 7px;"></div><div class="star" style="top: 70%; left: 60%; width: 5px; height: 5px;"></div><div class="star" style="top: 90%; left: 80%; width: 6px; height: 6px;"></div></div><div class="welcome">ようこそ </div><div class="center"><img src="スタート/POPI.jpg" width="730px" height="500px"></div><div class="center"><a href="問題選択.html" class="clickable"><img src="スタート/始める.jpg" width="700px" height="300px" alt="始める"></a></div><script>window.onload=function(){document.getElementById("modal").style.display="flex"};function closeModal(){document.getElementById("modal").style.display="none"}</script></body></html>
