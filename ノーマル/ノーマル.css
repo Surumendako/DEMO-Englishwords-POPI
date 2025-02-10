@@ -253,7 +253,7 @@ input[type="text"]:focus {
   height: 100%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .keyboard {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(30px, 1fr)); /* 可能な限り横に並べる */
