@@ -257,7 +257,7 @@ input[type="text"]:focus {
     .keyboard {
         display: grid;
         grid-template-columns: repeat(9, minmax(30px, 1fr)); /* 1行9キーで調整 */
-        gap: 4px; /* 余白を微調整 */
+        gap: 4px; 
         width: 100%;
         max-width: 480px;
         padding: 10px;
@@ -267,8 +267,8 @@ input[type="text"]:focus {
 
     .key {
         width: 100%;
-        aspect-ratio: 1 / 1.1; /* 縦長になりすぎないよう調整 */
-        font-size: 14px; /* 文字サイズを適切に */
+        aspect-ratio: 1 / 1.1; 
+        font-size: 14px; 
         font-weight: bold;
         color: #a33c2a;
         background-color: #fff8dc;
@@ -285,10 +285,10 @@ input[type="text"]:focus {
     .key:active {
         background-color: #f3d9a8;
     }
-
-    /* 画像サイズを縮小 */
+    
+    
     .key img {
-        width: 80%; /* 画像をキーの40%に */
+        width: 130%; 
         height: auto;
     }
     
