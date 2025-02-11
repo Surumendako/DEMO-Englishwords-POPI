@@ -329,9 +329,11 @@ input[type="text"]:focus {
 #questionText {
     font-size: 36px;
     margin-bottom: 20px;
+   text-align: center;
 }
 
 input[type="text"] {
     width: 80%;
     max-width: 300px;
+   text-align: center;
 }
