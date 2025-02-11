@@ -327,7 +327,7 @@ input[type="text"]:focus {
 }
 
 #questionText {
-    font-size: 20px;
+    font-size: 90px;
     margin-bottom: 20px;
    text-align: center;
 }
