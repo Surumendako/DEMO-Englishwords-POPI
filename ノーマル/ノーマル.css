@@ -268,7 +268,7 @@ input[type="text"]:focus {
     .key {
         width: 100%;
         aspect-ratio: 1 / 1.1; 
-        font-size: 14px; 
+        font-size: 50px; 
         font-weight: bold;
         color: #a33c2a;
         background-color: #fff8dc;
