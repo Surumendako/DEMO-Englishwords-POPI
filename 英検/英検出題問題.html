@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英単語　POPI　英検問題一覧</title>
+    <link rel="stylesheet" href="../英検/英検.css">
+    <link rel="stylesheet" href="../英検/英検出題問題.css">
+
+</head>
+<body>
+
+    <h1>英検問題一覧 <button onclick="toggleLevelMenu()">→</button></h1>
+
+ 
+    <div id="levelMenu" style="display: none; text-align: center; margin-top: 20px;">
+       <button class="tab" onclick="showLevel(1)">準二級</button>
+        <button class="tab" onclick="showLevel(2)">二級</button>
+        <button class="tab" onclick="showLevel(3)">準一級</button>
+        <button class="tab" onclick="showLevel(4)">一級</button>
+        <button class="tab" onclick="showLevel(0)">戻る</button>
+    </div>
+
+  
+    <div class="tabs" id="stageTabs"></div>
+
+    <div id="stageContent" class="stage-content"></div>
+
+    <a href="英検レベル.html">
+        <img src="../共有/戻る.jpg" alt="戻る" style="width: 200px; height: 100px;">
+    </a>
+
+    <script>
+        let currentLevel = 0; 
+
+   
+const questions = {
+0:[
+[
+
+]
+],
+
+
+
+    1: [ 
+[
+{japanese: "犬", english: "dog"},
+  {japanese: "猫", english: "cat"},
+  {japanese: "食べる", english: "eat"},
+  {japanese: "歩く", english: "walk"},
+  {japanese: "見る", english: "see"},
+  {japanese: "聞く", english: "listen"},
+  {japanese: "飲む", english: "drink"},
+  {japanese: "寝る", english: "sleep"},
+  {japanese: "家", english: "house"},
+  {japanese: "友達", english: "friend"},
+  {japanese: "車", english: "car"},
+  {japanese: "仕事", english: "work"},
+  {japanese: "学ぶ", english: "learn"},
+  {japanese: "話す", english: "talk"},
+  {japanese: "歌う", english: "sing"}
+],
+
+[
+{japanese: "走る", english: "run"},
+  {japanese: "泳ぐ", english: "swim"},
+  {japanese: "座る", english: "sit"},
+  {japanese: "立つ", english: "stand"},
+  {japanese: "ジャンプする", english: "jump"},
+  {japanese: "飛ぶ", english: "fly"},
+  {japanese: "書く", english: "write"},
+  {japanese: "読む", english: "read"},
+  {japanese: "買う", english: "buy"},
+  {japanese: "売る", english: "sell"},
+  {japanese: "作る", english: "make"},
+  {japanese: "開ける", english: "open"},
+  {japanese: "閉める", english: "close"},
+  {japanese: "待つ", english: "wait"},
+  {japanese: "使う", english: "use"}
+],
+
+[
+{japanese: "考える", english: "think"},
+  {japanese: "読む", english: "read"},
+  {japanese: "書く", english: "write"},
+  {japanese: "話す", english: "speak"},
+  {japanese: "見る", english: "look"},
+  {japanese: "感じる", english: "feel"},
+  {japanese: "歌う", english: "sing"},
+  {japanese: "走る", english: "run"},
+  {japanese: "飛ぶ", english: "fly"},
+  {japanese: "座る", english: "sit"},
+  {japanese: "立つ", english: "stand"},
+  {japanese: "食べる", english: "eat"},
+  {japanese: "聞く", english: "listen"},
+  {japanese: "飲む", english: "drink"},
+  {japanese: "使う", english: "use"}
+
+],
+
+[
+  {japanese: "説明する", english: "explain"},
+  {japanese: "選ぶ", english: "choose"},
+  {japanese: "決める", english: "decide"},
+  {japanese: "質問する", english: "ask"},
+  {japanese: "答える", english: "answer"},
+  {japanese: "見せる", english: "show"},
+  {japanese: "試す", english: "try"},
+  {japanese: "理解する", english: "understand"},
+  {japanese: "楽しむ", english: "enjoy"},
+  {japanese: "調べる", english: "investigate"},
+  {japanese: "助ける", english: "help"},
+  {japanese: "走る", english: "run"},
+  {japanese: "勉強する", english: "study"},
+  {japanese: "歩く", english: "walk"},
+  {japanese: "見る", english: "see"}
+
+],
+
+[
+  {japanese: "約束する", english: "promise"},
+  {japanese: "笑う", english: "laugh"},
+  {japanese: "涙", english: "tear"},
+  {japanese: "怒る", english: "angry"},
+  {japanese: "楽しい", english: "fun"},
+  {japanese: "面白い", english: "interesting"},
+  {japanese: "悲しい", english: "sad"},
+  {japanese: "眠い", english: "sleepy"},
+  {japanese: "退屈", english: "bored"},
+  {japanese: "嬉しい", english: "happy"},
+  {japanese: "心配", english: "worried"},
+  {japanese: "お腹が空く", english: "hungry"},
+  {japanese: "暑い", english: "hot"},
+  {japanese: "寒い", english: "cold"},
+  {japanese: "高い", english: "high"}
+],
+
+[
+  {japanese: "早い", english: "fast"},
+  {japanese: "遅い", english: "slow"},
+  {japanese: "広い", english: "wide"},
+  {japanese: "狭い", english: "narrow"},
+  {japanese: "長い", english: "long"},
+  {japanese: "短い", english: "short"},
+  {japanese: "新しい", english: "new"},
+  {japanese: "古い", english: "old"},
+  {japanese: "明るい", english: "bright"},
+  {japanese: "暗い", english: "dark"},
+  {japanese: "重い", english: "heavy"},
+  {japanese: "軽い", english: "light"},
+  {japanese: "高い", english: "expensive"},
+  {japanese: "安い", english: "cheap"},
+  {japanese: "広い", english: "spacious"}
+],
+
+[
+  {japanese: "社会", english: "society"},
+  {japanese: "文化", english: "culture"},
+  {japanese: "教育", english: "education"},
+  {japanese: "政府", english: "government"},
+  {japanese: "経済", english: "economy"},
+  {japanese: "政治", english: "politics"},
+  {japanese: "法律", english: "law"},
+  {japanese: "歴史", english: "history"},
+  {japanese: "科学", english: "science"},
+  {japanese: "技術", english: "technology"},
+  {japanese: "医療", english: "medicine"},
+  {japanese: "環境", english: "environment"},
+  {japanese: "国", english: "country"},
+  {japanese: "地域", english: "region"},
+  {japanese: "世界", english: "world"}
+],
+
+[
+  {japanese: "社会人", english: "working adult"},
+  {japanese: "学生", english: "student"},
+  {japanese: "教師", english: "teacher"},
+  {japanese: "医者", english: "doctor"},
+  {japanese: "弁護士", english: "lawyer"},
+  {japanese: "政治家", english: "politician"},
+  {japanese: "経営者", english: "business owner"},
+  {japanese: "エンジニア", english: "engineer"},
+  {japanese: "看護師", english: "nurse"},
+  {japanese: "研究者", english: "researcher"},
+  {japanese: "警察官", english: "police officer"},
+  {japanese: "消防士", english: "firefighter"},
+  {japanese: "科学者", english: "scientist"},
+  {japanese: "料理人", english: "chef"},
+  {japanese: "芸術家", english: "artist"}
+],
+
+[
+  {japanese: "銀行", english: "bank"},
+  {japanese: "会社", english: "company"},
+  {japanese: "工場", english: "factory"},
+  {japanese: "病院", english: "hospital"},
+  {japanese: "図書館", english: "library"},
+  {japanese: "学校", english: "school"},
+  {japanese: "スーパー", english: "supermarket"},
+  {japanese: "レストラン", english: "restaurant"},
+  {japanese: "ホテル", english: "hotel"},
+  {japanese: "公園", english: "park"},
+  {japanese: "映画館", english: "cinema"},
+  {japanese: "駅", english: "station"},
+  {japanese: "空港", english: "airport"},
+  {japanese: "郵便局", english: "post office"},
+  {japanese: "カフェ", english: "cafe"}
+],
+
+[
+  {japanese: "スポーツ", english: "sports"},
+  {japanese: "音楽", english: "music"},
+  {japanese: "映画", english: "movie"},
+  {japanese: "アート", english: "art"},
+  {japanese: "文学", english: "literature"},
+  {japanese: "旅行", english: "travel"},
+  {japanese: "ゲーム", english: "games"},
+  {japanese: "料理", english: "cooking"},
+  {japanese: "写真", english: "photography"},
+  {japanese: "読書", english: "reading"},
+  {japanese: "舞台", english: "theater"},
+  {japanese: "観光", english: "tourism"},
+  {japanese: "展覧会", english: "exhibition"},
+  {japanese: "博物館", english: "museum"},
+  {japanese: "コンサート", english: "concert"}
+],
+
+[
+  {japanese: "選ぶ", english: "choose"},
+  {japanese: "意見", english: "opinion"},
+  {japanese: "結果", english: "result"},
+  {japanese: "協力", english: "cooperation"},
+  {japanese: "努力", english: "effort"},
+  {japanese: "変更", english: "change"},
+  {japanese: "理解", english: "understanding"},
+  {japanese: "確認", english: "confirmation"},
+  {japanese: "問題", english: "problem"},
+  {japanese: "解決", english: "solution"},
+  {japanese: "進む", english: "advance"},
+  {japanese: "停止", english: "stop"},
+  {japanese: "方法", english: "method"},
+  {japanese: "改善", english: "improvement"},
+  {japanese: "注意", english: "attention"}
+],
+[
+  {japanese: "発表", english: "presentation"},
+  {japanese: "意図", english: "intention"},
+  {japanese: "責任", english: "responsibility"},
+  {japanese: "失敗", english: "failure"},
+  {japanese: "成功", english: "success"},
+  {japanese: "観察", english: "observation"},
+  {japanese: "解説", english: "explanation"},
+  {japanese: "進行", english: "progress"},
+  {japanese: "予測", english: "prediction"},
+  {japanese: "原因", english: "cause"},
+  {japanese: "対策", english: "countermeasure"},
+  {japanese: "選択", english: "selection"},
+  {japanese: "改善", english: "enhancement"},
+  {japanese: "活動", english: "activity"},
+  {japanese: "交渉", english: "negotiation"}
+],
+
+[
+  {japanese: "連絡", english: "contact"},
+  {japanese: "提案", english: "suggestion"},
+  {japanese: "質問", english: "question"},
+  {japanese: "結論", english: "conclusion"},
+  {japanese: "判断", english: "judgment"},
+  {japanese: "分析", english: "analysis"},
+  {japanese: "確認", english: "check"},
+  {japanese: "例", english: "example"},
+  {japanese: "決定", english: "decision"},
+  {japanese: "意識", english: "consciousness"},
+  {japanese: "体験", english: "experience"},
+  {japanese: "誤解", english: "misunderstanding"},
+  {japanese: "伝達", english: "communication"},
+  {japanese: "努力", english: "effort"},
+  {japanese: "不安", english: "anxiety"}
+],
+
+[
+{japanese: "仮定", english: "assumption"},
+  {japanese: "分析", english: "analysis"},
+  {japanese: "重要", english: "important"},
+  {japanese: "視点", english: "perspective"},
+  {japanese: "意識", english: "awareness"},
+  {japanese: "論理", english: "logic"},
+  {japanese: "相違", english: "difference"},
+  {japanese: "予測", english: "forecast"},
+  {japanese: "目標", english: "goal"},
+  {japanese: "確認", english: "confirmation"},
+  {japanese: "意図", english: "intention"},
+  {japanese: "仮説", english: "hypothesis"},
+  {japanese: "評価", english: "evaluation"},
+  {japanese: "対応", english: "response"},
+  {japanese: "説明", english: "explanation"}
+],
+
+[
+  {japanese: "競争", english: "competition"},
+  {japanese: "成果", english: "achievement"},
+  {japanese: "計画", english: "plan"},
+  {japanese: "目標", english: "objective"},
+  {japanese: "証拠", english: "evidence"},
+  {japanese: "選択肢", english: "option"},
+  {japanese: "効果", english: "effectiveness"},
+  {japanese: "挑戦", english: "challenge"},
+  {japanese: "研究", english: "research"},
+  {japanese: "改善", english: "improvement"},
+  {japanese: "決断", english: "decision"},
+  {japanese: "変更", english: "alteration"},
+  {japanese: "達成", english: "attainment"},
+  {japanese: "評価", english: "assessment"},
+  {japanese: "意図", english: "purpose"}
+]
+],
+
+2:[
+
+],
+
+3:[
+
+
+],
+
+4:[
+
+
+]
+};
+  
+          function toggleLevelMenu() {
+            const menu = document.getElementById("levelMenu");
+            menu.style.display = (menu.style.display === "none") ? "block" : "none";
+        }
+
+        function showStage(stageNumber) {
+            const stageContent = document.getElementById('stageContent');
+            const stageList = questions[currentLevel][stageNumber - 0];
+            const listItems = stageList.map(item => {
+                return `<li><span class="japanese">${item.japanese}</span> - <span class="english">${item.english}</span></li>`;
+            });
+            stageContent.innerHTML = `<ul>${listItems.join('')}</ul>`;
+        }
+
+        function showLevel(level) {
+            currentLevel = level; 
+
+            const tabs = document.getElementById('stageTabs');
+            tabs.innerHTML = ''; 
+
+          
+            for (let i = 0; i < questions[level].length; i++) {
+                const tab = document.createElement('button');
+                tab.className = 'tab';
+                tab.innerText = `S ${i + 1}`;
+                tab.onclick = function() {
+                    showStage(i + 1);
+                };
+                tabs.appendChild(tab);
+            }
+
+            if (questions[level].length > 0) {
+                showStage(0);
+            }
+        }
+
+        
+        showLevel(0);
+    </script>
+
+</body>
+</html>
