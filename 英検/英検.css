@@ -231,15 +231,15 @@
     height: 100%;
   }
   
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
     .keyboard {
         display: grid;
-        grid-template-columns: repeat(9, minmax(30px, 1fr)); 
+        grid-template-columns: repeat(9, minmax(30px, 1fr)); /* 1行9キーで調整 */
         gap: 13px; 
         width: 100%;
         max-width: 480px;
         padding: 50px;
-        background-color: #e482ff;
+        background-color: #f9e5b9;
         border-radius: 30px;
     }
 
@@ -249,7 +249,7 @@
         font-size: 50px; 
         font-weight: bold;
         color: #a33c2a;
-        background-color: #ffa4ff;
+        background-color: #fff8dc;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -314,6 +314,4 @@ input[type="text"] {
     width: 80%;
     max-width: 300px;
    text-align: center;
-}
-
 }
