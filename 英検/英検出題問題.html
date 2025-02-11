@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英単語　POPI　英検問題一覧</title>
+    <link rel="stylesheet" href="../英検/英検.css">
+    <link rel="stylesheet" href="../英検/英検出題問題.css">
+
+</head>
+<body>
+
+    <h1>英検問題一覧 <button onclick="toggleLevelMenu()">→</button></h1>
+
+ 
+    <div id="levelMenu" style="display: none; text-align: center; margin-top: 20px;">
+       <button class="tab" onclick="showLevel(1)">準二級</button>
+        <button class="tab" onclick="showLevel(2)">二級</button>
+        <button class="tab" onclick="showLevel(3)">準一級</button>
+        <button class="tab" onclick="showLevel(4)">一級</button>
+        <button class="tab" onclick="showLevel(0)">戻る</button>
+    </div>
+
+  
+    <div class="tabs" id="stageTabs"></div>
+
+    <div id="stageContent" class="stage-content"></div>
+
+    <a href="英検レベル.html">
+        <img src="../共有/戻る.jpg" alt="戻る" style="width: 200px; height: 100px;">
+    </a>
+
+    <script>
+        let currentLevel = 0; 
+
+   
+const questions = {
+0:[
+[
+
+]
+],
+
+
+
+    1: [ 
+      
+],
+
+2:[
+
+],
+
+3:[
+
+
+],
+
+4:[
+
+
+]
+};
+  
+          function toggleLevelMenu() {
+            const menu = document.getElementById("levelMenu");
+            menu.style.display = (menu.style.display === "none") ? "block" : "none";
+        }
+
+        function showStage(stageNumber) {
+            const stageContent = document.getElementById('stageContent');
+            const stageList = questions[currentLevel][stageNumber - 0];
+            const listItems = stageList.map(item => {
+                return `<li><span class="japanese">${item.japanese}</span> - <span class="english">${item.english}</span></li>`;
+            });
+            stageContent.innerHTML = `<ul>${listItems.join('')}</ul>`;
+        }
+
+        function showLevel(level) {
+            currentLevel = level; 
+
+            const tabs = document.getElementById('stageTabs');
+            tabs.innerHTML = ''; 
+
+          
+            for (let i = 0; i < questions[level].length; i++) {
+                const tab = document.createElement('button');
+                tab.className = 'tab';
+                tab.innerText = `S ${i + 1}`;
+                tab.onclick = function() {
+                    showStage(i + 1);
+                };
+                tabs.appendChild(tab);
+            }
+
+            if (questions[level].length > 0) {
+                showStage(0);
+            }
+        }
+
+        
+        showLevel(0);
+    </script>
+
+</body>
+</html>
