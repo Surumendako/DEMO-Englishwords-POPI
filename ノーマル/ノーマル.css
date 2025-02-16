@@ -260,7 +260,7 @@ input[type="text"]:focus {
         gap: 15px; 
         width: 100%;
         max-width: 480px;
-        padding: 120px;
+        padding: 30px;
         background-color: #f9e5b9;
         border-radius: 30px;
     }
