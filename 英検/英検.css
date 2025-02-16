@@ -144,6 +144,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display:block;
   }
   
   #keyboardToggleButton:active {
@@ -314,4 +315,8 @@ input[type="text"] {
     width: 80%;
     max-width: 300px;
    text-align: center;
+}
+
+#keyboardToggleButton {
+display:none;
 }
