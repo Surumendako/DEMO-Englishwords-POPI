@@ -257,10 +257,10 @@ input[type="text"]:focus {
     .keyboard {
         display: grid;
         grid-template-columns: repeat(9, minmax(30px, 1fr)); /* 1行9キーで調整 */
-        gap: 13px; 
+        gap: 15px; 
         width: 100%;
         max-width: 480px;
-        padding: 50px;
+        padding: 80px;
         background-color: #f9e5b9;
         border-radius: 30px;
     }
