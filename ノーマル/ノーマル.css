@@ -166,7 +166,7 @@ input[type="text"]:focus {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  display:block
+  display:block;
 }
 
 #keyboardToggleButton:active {
