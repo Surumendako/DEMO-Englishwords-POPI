@@ -232,14 +232,14 @@
     height: 100%;
   }
   
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .keyboard {
         display: grid;
         grid-template-columns: repeat(9, minmax(30px, 1fr)); /* 1行9キーで調整 */
-        gap: 13px; 
+        gap: 15px; 
         width: 100%;
         max-width: 480px;
-        padding: 50px;
+        padding: 30px;
         background-color: #f9e5b9;
         border-radius: 30px;
     }
@@ -247,7 +247,7 @@
     .key {
         width: 100%;
         aspect-ratio: 1 / 1.1; 
-        font-size: 50px; 
+        font-size: 80px; 
         font-weight: bold;
         color: #a33c2a;
         background-color: #fff8dc;
